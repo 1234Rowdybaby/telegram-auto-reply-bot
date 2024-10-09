@@ -1,16 +1,15 @@
+import os
 from telethon import TelegramClient, events
 
-# Set your credentials here
-api_id =24222039   # Replace with your actual API ID
-api_hash = '6dd2dc70434b2f577f76a2e993135662'  # Replace with your actual API Hash
-group_id = '-1001702618096'  # Replace with your actual group ID or username
+api_id = int(os.getenv('24222039'))
+api_hash = os.getenv('6dd2dc70434b2f577f76a2e993135662')
+group_id = os.getenv('-1001702618096')  # Now using environment variable
 
 client = TelegramClient('my_session', api_id, api_hash)
 
 @client.on(events.NewMessage(chats=group_id, incoming=True))
 async def my_event_handler(event):
-    # Customize your reply message here
-    reply_message = "Hey 👋🏻 😍
+    reply_message = "Hey 👋🏻 😍 ... (Hey 👋🏻 😍
 
 
 
@@ -27,10 +26,9 @@ async def my_event_handler(event):
 👉  @Fundamongobot
 ••••••••••••••••••••••••••••••••••••••••
 
-𝗣𝗮𝗴𝗲𝘀 📄  ◾   𝟭/𝟮  ◾  𝗡𝗲𝘅𝘁 ⏩"  # Change this to your desired reply message
+𝗣𝗮𝗴𝗲𝘀 📄  ◾   𝟭/𝟮  ◾  𝗡𝗲𝘅𝘁 ⏩)"
     await event.reply(reply_message)
 
-# Start the client
 client.start()
 print("Auto-reply bot is running...")
 client.run_until_disconnected()
