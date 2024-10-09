@@ -9,24 +9,8 @@ client = TelegramClient('my_session', api_id, api_hash)
 
 @client.on(events.NewMessage(chats=group_id, incoming=True))
 async def my_event_handler(event):
-    reply_message = "Hey 👋🏻 😍 ... (Hey 👋🏻 😍
-
-
-
-📫 𝗬𝗼𝘂𝗿 𝗙𝗶𝗹𝗲 𝗶𝘀 𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱 𝗛𝗲𝗮𝗿
-
-••••••••••••••••••••••••••••••••••••••••
-👉  @Fundamongobot
-👉  @Fundamongobot
-👉  @Fundamongobot
-👉 @Fundamongobot
-👉  @Fundamongobot
-👉 @Fundamongobot
-👉  @Fundamongobot
-👉  @Fundamongobot
-••••••••••••••••••••••••••••••••••••••••
-
-𝗣𝗮𝗴𝗲𝘀 📄  ◾   𝟭/𝟮  ◾  𝗡𝗲𝘅𝘁 ⏩)"
+    reply_message = "Hey 👋🏻 😍 ... (Hey 👋🏻📫 𝗬𝗼𝘂𝗿 𝗙𝗶𝗹𝗲 𝗶𝘀 𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱 𝗛𝗲𝗮𝗿
+👉  @Fundamongobot)"
     await event.reply(reply_message)
 
 client.start()
